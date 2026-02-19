@@ -29,7 +29,13 @@
     .menu h2 { font-size: 2.5rem; margin-bottom: 2rem; }
     .menu-cards { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
     .card { background: #000; border-radius: 10px; padding: 2rem; width: 250px; border: 1px solid #fff; transition: transform 0.3s; }
+    .card img { width: 80px; margin-bottom: 1rem; }
     .card:hover { transform: translateY(-5px); }
+
+    /* About Section */
+    .about { padding: 5rem 2rem; text-align: center; background: #111; }
+    .about h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .about p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #ccc; }
 
     /* Contact / Inquiry Form */
     .contact { padding: 5rem 2rem; text-align: center; }
@@ -58,6 +64,7 @@
     <div class="logo">Franco Events</div>
     <ul>
       <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -70,19 +77,30 @@
     <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Inquire Now</button>
   </section>
 
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>We are a local Tulsa business ready to serve any type of celebration, big or small. From birthdays to corporate events, Franco Events brings delicious snacks and beautifully curated charcuterie boards to make your event unforgettable.</p>
+    <!-- Example clipart placeholder -->
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/party.png" alt="party clipart" />
+  </section>
+
   <!-- Menu -->
   <section class="menu" id="menu">
     <h2>Our Offerings</h2>
     <div class="menu-cards">
       <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/pancakes.png" alt="mini pancakes">
         <h3>Mini Pancakes</h3>
         <p>Fluffy mini pancakes with fresh fruits, chocolate drizzle, and whipped cream.</p>
       </div>
       <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/corn.png" alt="Mexican elote">
         <h3>Mexican Elote</h3>
         <p>Classic street-style corn with mayo, cheese, chili powder, and lime.</p>
       </div>
       <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/cheese.png" alt="charcuterie">
         <h3>Charcuterie</h3>
         <p>Gourmet boards with cheeses, meats, fruits, and nuts for any occasion.</p>
       </div>
@@ -109,4 +127,3 @@
 
 </body>
 </html>
-
