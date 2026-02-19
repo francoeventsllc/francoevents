@@ -12,7 +12,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family:'Poppins', sans-serif;
   background:#ffffff;
   color:#000;
   line-height:1.6;
@@ -25,10 +25,10 @@ nav {
   justify-content:space-between;
   align-items:center;
   padding:20px 8%;
-  position:fixed;
-  width:100%;
-  background:white;
   border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  background:white;
   z-index:1000;
 }
 
@@ -47,45 +47,31 @@ nav a {
   text-decoration:none;
   color:black;
   font-weight:500;
-  transition:0.3s;
+  transition:.3s;
 }
 
 nav a:hover { opacity:.6; }
 
 /* Hero */
 .hero {
-  height:100vh;
-  background:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  height:85vh;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
   padding:0 8%;
-  position:relative;
-}
-
-.hero::after {
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,0.65);
-}
-
-.hero-content {
-  position:relative;
-  z-index:2;
-  max-width:800px;
 }
 
 .hero h1 {
   font-family:'DM Serif Display', serif;
-  font-size:60px;
+  font-size:58px;
   margin-bottom:20px;
 }
 
 .hero p {
   font-size:18px;
   margin-bottom:30px;
+  max-width:650px;
 }
 
 .hero button {
@@ -93,9 +79,9 @@ nav a:hover { opacity:.6; }
   background:black;
   color:white;
   border:none;
-  font-weight:500;
   cursor:pointer;
-  transition:0.3s;
+  font-weight:500;
+  transition:.3s;
 }
 
 .hero button:hover { background:#333; }
@@ -126,28 +112,27 @@ h2 {
 }
 
 .menu-item {
-  width:320px;
-  overflow:hidden;
+  width:280px;
+  padding:30px 20px;
+  border:1px solid #eee;
   border-radius:10px;
-  transition:0.4s;
+  transition:.3s;
+}
+
+.menu-item:hover {
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transform:translateY(-5px);
 }
 
 .menu-item img {
-  width:100%;
-  height:350px;
-  object-fit:cover;
-  border-radius:10px;
-  transition:0.4s;
-}
-
-.menu-item:hover img {
-  transform:scale(1.05);
+  width:70px;
+  margin-bottom:20px;
 }
 
 .menu-item h3 {
-  margin-top:15px;
   font-family:'DM Serif Display', serif;
-  font-size:26px;
+  font-size:24px;
+  margin-bottom:10px;
 }
 
 /* Contact */
@@ -177,7 +162,7 @@ button.submit-btn {
   padding:14px;
   font-weight:500;
   cursor:pointer;
-  transition:0.3s;
+  transition:.3s;
 }
 
 button.submit-btn:hover { background:#333; }
@@ -209,7 +194,7 @@ footer {
 </nav>
 
 <section class="hero">
-  <div class="hero-content">
+  <div>
     <h1>Elevated Snacks for Every Celebration</h1>
     <p>Mini pancakes, Mexican elote, and luxury charcuterie cart experiences designed to elevate weddings, birthdays, and corporate events.</p>
     <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
@@ -227,21 +212,25 @@ footer {
 
 <section class="menu" id="menu">
   <h2>Our Offerings</h2>
+
   <div class="menu-container">
 
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1587731957309-1a5f4b2b6f6e?auto=format&fit=crop&w=800&q=80">
+      <img src="https://img.icons8.com/ios-filled/100/000000/pancakes.png">
       <h3>Mini Pancakes</h3>
+      <p>Freshly made mini pancakes with customizable toppings and elegant presentation.</p>
     </div>
 
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1604908177522-402bb70f52e3?auto=format&fit=crop&w=800&q=80">
+      <img src="https://img.icons8.com/ios-filled/100/000000/corn.png">
       <h3>Mexican Elote</h3>
+      <p>Authentic street-style corn cups with bold flavor and premium ingredients.</p>
     </div>
 
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1600891963935-cd3e45b1a9d3?auto=format&fit=crop&w=800&q=80">
+      <img src="https://img.icons8.com/ios-filled/100/000000/cheese.png">
       <h3>Charcuterie Cart</h3>
+      <p>Luxury grazing experiences featuring artisan cheeses, cured meats, and seasonal selections.</p>
     </div>
 
   </div>
@@ -265,5 +254,3 @@ footer {
 
 </body>
 </html>
-
-
