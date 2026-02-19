@@ -1,256 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Franco Events</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Cart Events | Tulsa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
 
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-body {
-  font-family:'Poppins', sans-serif;
-  background:#ffffff;
-  color:#000;
-  line-height:1.6;
-  scroll-behavior:smooth;
-}
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
 
-/* Navigation */
-nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 8%;
-  border-bottom:1px solid #eee;
-  position:sticky;
-  top:0;
-  background:white;
-  z-index:1000;
-}
+        section {
+            padding: 100px 10%;
+        }
 
-.logo {
-  font-family:'DM Serif Display', serif;
-  font-size:28px;
-}
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-nav ul {
-  display:flex;
-  gap:30px;
-  list-style:none;
-}
+        /* Package Grid */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
 
-nav a {
-  text-decoration:none;
-  color:black;
-  font-weight:500;
-  transition:.3s;
-}
+        .card {
+            padding: 40px;
+            border: 1px solid #f0f0f0;
+            transition: 0.3s;
+            text-align: center;
+        }
 
-nav a:hover { opacity:.6; }
+        .card:hover {
+            border-color: #000;
+        }
 
-/* Hero */
-.hero {
-  height:85vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:0 8%;
-}
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
 
-.hero h1 {
-  font-family:'DM Serif Display', serif;
-  font-size:58px;
-  margin-bottom:20px;
-}
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
 
-.hero p {
-  font-size:18px;
-  margin-bottom:30px;
-  max-width:650px;
-}
+        /* About & Inquire */
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
 
-.hero button {
-  padding:14px 35px;
-  background:black;
-  color:white;
-  border:none;
-  cursor:pointer;
-  font-weight:500;
-  transition:.3s;
-}
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
 
-.hero button:hover { background:#333; }
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
 
-/* Sections */
-section { padding:100px 8%; text-align:center; }
+        button {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
 
-h2 {
-  font-family:'DM Serif Display', serif;
-  font-size:42px;
-  margin-bottom:30px;
-}
+        button:hover {
+            background: #333;
+        }
 
-/* About */
-.about p {
-  max-width:700px;
-  margin:auto;
-  font-size:17px;
-}
-
-/* Menu */
-.menu-container {
-  display:flex;
-  gap:40px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-top:40px;
-}
-
-.menu-item {
-  width:280px;
-  padding:30px 20px;
-  border:1px solid #eee;
-  border-radius:10px;
-  transition:.3s;
-}
-
-.menu-item:hover {
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transform:translateY(-5px);
-}
-
-.menu-item img {
-  width:70px;
-  margin-bottom:20px;
-}
-
-.menu-item h3 {
-  font-family:'DM Serif Display', serif;
-  font-size:24px;
-  margin-bottom:10px;
-}
-
-/* Contact */
-.contact {
-  background:#f7f7f7;
-}
-
-form {
-  max-width:500px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  margin-top:30px;
-}
-
-input, textarea {
-  padding:12px;
-  border:1px solid #ccc;
-  font-family:'Poppins', sans-serif;
-}
-
-button.submit-btn {
-  background:black;
-  color:white;
-  border:none;
-  padding:14px;
-  font-weight:500;
-  cursor:pointer;
-  transition:.3s;
-}
-
-button.submit-btn:hover { background:#333; }
-
-/* Footer */
-footer {
-  padding:40px;
-  text-align:center;
-  border-top:1px solid #eee;
-  font-size:14px;
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .hero h1 { font-size:38px; }
-}
-</style>
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
-
 <body>
 
-<nav>
-  <div class="logo">Franco Events</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#contact">Inquiry</a></li>
-  </ul>
-</nav>
+    <header>
+        <div class="subtitle">Tulsa's Premier</div>
+        <h1>Luxe Cart Events</h1>
+        <p>Elevating your celebrations, one bite at a time.</p>
+    </header>
 
-<section class="hero">
-  <div>
-    <h1>Elevated Snacks for Every Celebration</h1>
-    <p>Mini pancakes, Mexican elote, and luxury charcuterie cart experiences designed to elevate weddings, birthdays, and corporate events.</p>
-    <button onclick="document.getElementById('contact').scrollIntoView()">Inquire Now</button>
-  </div>
-</section>
+    <section id="about">
+        <h2 class="section-title">Our Story</h2>
+        <div class="about-text">
+            <p>Based in the heart of <strong>Tulsa</strong>, we specialize in luxury event snack carts that bring both flavor and flair to your most cherished moments. Whether it's a dream wedding, a modern bridal shower, or an intimate private party, we believe every detail should be exquisite. We would love to be a part of your next special event.</p>
+        </div>
+    </section>
 
-<section class="about" id="about">
-  <h2>About Us</h2>
-  <p>
-    We are a local Tulsa business ready to serve any type of celebration, big or small.
-    From birthdays and weddings to corporate gatherings, Franco Events brings beautifully styled snack carts
-    and curated charcuterie experiences that make every event unforgettable.
-  </p>
-</section>
+    <section id="packages">
+        <h2 class="section-title">The Packages</h2>
+        <div class="packages">
+            <div class="card">
+                <div class="card-icon">🥞</div>
+                <h3>Mini Pancakes</h3>
+                <p>Golden, fluffy mini pancakes served with gourmet toppings and artisanal syrups.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌽</div>
+                <h3>Elote Cart</h3>
+                <p>Authentic street corn with a sophisticated twist. Seasoned to perfection for your guests.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🍷</div>
+                <h3>Charcuterie</h3>
+                <p>Curated selections of fine cheeses, cured meats, and seasonal pairings served from our signature cart.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="menu" id="menu">
-  <h2>Our Offerings</h2>
+    <section id="inquire">
+        <h2 class="section-title">Inquire</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Event Date" onfocus="(this.type='date')">
+            <textarea rows="5" placeholder="Tell us about your event..."></textarea>
+            <button type="submit">Send Inquiry</button>
+        </form>
+    </section>
 
-  <div class="menu-container">
-
-    <div class="menu-item">
-      <img src="https://img.icons8.com/ios-filled/100/000000/pancakes.png">
-      <h3>Mini Pancakes</h3>
-      <p>Freshly made mini pancakes with customizable toppings and elegant presentation.</p>
-    </div>
-
-    <div class="menu-item">
-      <img src="https://img.icons8.com/ios-filled/100/000000/corn.png">
-      <h3>Mexican Elote</h3>
-      <p>Authentic street-style corn cups with bold flavor and premium ingredients.</p>
-    </div>
-
-    <div class="menu-item">
-      <img src="https://img.icons8.com/ios-filled/100/000000/cheese.png">
-      <h3>Charcuterie Cart</h3>
-      <p>Luxury grazing experiences featuring artisan cheeses, cured meats, and seasonal selections.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <h2>Send an Inquiry</h2>
-  <form action="https://formspree.io/f/yourformid" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="_replyto" placeholder="Your Email" required>
-    <input type="text" name="eventtype" placeholder="Event Type" required>
-    <input type="date" name="eventdate" required>
-    <textarea name="message" rows="4" placeholder="Tell us about your event"></textarea>
-    <button type="submit" class="submit-btn">Submit Inquiry</button>
-  </form>
-</section>
-
-<footer>
-  © 2026 Franco Events | Tulsa, Oklahoma
-</footer>
+    <footer>
+        &copy; 2026 LUXE CART EVENTS | TULSA, OK
+    </footer>
 
 </body>
 </html>
